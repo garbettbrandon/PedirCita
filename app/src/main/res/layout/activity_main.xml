@@ -1,53 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BDBDBD"
+    android:backgroundTint="#121010"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewDNI"
+    <ImageView
+        android:id="@+id/imgBanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Introduzca su DNI:"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:importantForAccessibility="no"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bannerbarberia" />
+
+    <TextView
+        android:id="@+id/tvDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Introduzca DNI:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/etDNI"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBanner"
+        tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/editTextDNI"
-        android:layout_width="match_parent"
+        android:id="@+id/etDNI"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewDNI"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="DNI"
         android:inputType="text"
-        android:hint="DNI"/>
+        android:minHeight="48dp"
+        android:textColorHint="#A6A4A4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBanner"
+        tools:ignore="Autofill,HardcodedText,LabelFor" />
 
     <Button
-        android:id="@+id/buttonGuardarCita"
+        android:id="@+id/btnDia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="116dp"
+        android:backgroundTint="#323030"
+        android:text="Día"
+        app:layout_constraintEnd_toStartOf="@+id/btnHora"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDNI"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="108dp"
+        android:backgroundTint="#323030"
+        android:text="Hora"
+        android:textColorLink="#AC2D2D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDNI"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnPedirCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:backgroundTint="#323030"
         android:text="Pedir Cita"
-        android:layout_below="@id/editTextDNI"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
-
-    <ImageView
-        android:id="@+id/imageViewCheck"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-        android:src="@drawable/check"/>
-
-    <TextView
-        android:id="@+id/textViewCitaGuardada"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Su cita se ha guardado satisfactoriamente."
-        android:layout_below="@id/imageViewCheck"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:visibility="gone"/>
-
-</RelativeLayout>
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDia"
+        tools:ignore="HardcodedText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
